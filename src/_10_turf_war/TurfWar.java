@@ -31,12 +31,21 @@ public class TurfWar extends PApplet {
         boolean moveRight = false;
         int pixelCount = 0;
 
-        void drawPlayer() {
+        void drawPlayer(int x,int y, int speed, int playersize, int playercolor, int upkey, int downkey, int leftkey, int rightkey) {
+        	this.x = x;
+        	this.y = y;
+        	this.speed = speed;
+        	this.playerSize = playersize;
+        	this.playerColor = playercolor;
+        	this.upKey = upkey;
+        	this.downKey = downkey;
+        	this.leftKey = leftkey;
+        	this.rightKey = rightkey;
             /*
              * 2. Draw a rectangle to represent the the Player using its color,
              * coordinates and size.
              */
-            
+            rect(x,y,playersize,playersize);
         }
 
         void update() {

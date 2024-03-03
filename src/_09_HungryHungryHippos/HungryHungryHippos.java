@@ -61,7 +61,10 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
      * Create your hippo objects here. The "left" input parameter indicates
      * which side the hippo is drawn.
      */
-    Hippo myHippoObject = new Hippo("left");
+    Hippo myHippoObject = new Hippo("left","jeffenstein",Color.GRAY);
+    Hippo glubtubbis = new Hippo("down","glubtubbis",Color.green);
+    Hippo virtualBoy = new Hippo("right", "the Nintendo Virtual Boy",Color.red);
+    Hippo owen = new Hippo("up","joke",Color.ORANGE);
 
     public HungryHungryHippos() {
         gameFrame.setScene(this);
@@ -97,6 +100,9 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
          * Draw all the hippos here
          */
         myHippoObject.draw(g);
+        glubtubbis.draw(g);
+        virtualBoy.draw(g);
+        owen.draw(g);
         
         if (startGame) {
             /*
@@ -110,6 +116,9 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
              * this for all of your hippos!
              */
             checkHippoEating(myHippoObject);
+            checkHippoEating(glubtubbis);
+            checkHippoEating(virtualBoy);
+            checkHippoEating(owen);
         }
     }
 
@@ -122,14 +131,14 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
          */
         if (keyCode == KeyEvent.VK_S) {
             startGame = true;
-        } else if (keyCode == KeyEvent.VK_1) {
+        } else if (keyCode == KeyEvent.VK_A) {
             myHippoObject.eat();
-        } else if (keyCode == KeyEvent.VK_2) {
-            
-        } else if (keyCode == KeyEvent.VK_3) {
-            
-        } else if (keyCode == KeyEvent.VK_4) {
-            
+        } else if (keyCode == KeyEvent.VK_X) {
+            glubtubbis.eat();
+        } else if (keyCode == KeyEvent.VK_D) {
+            virtualBoy.eat();
+        } else if (keyCode == KeyEvent.VK_W) {
+            owen.eat();
         }
     }
     

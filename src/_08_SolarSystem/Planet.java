@@ -11,11 +11,12 @@ public class Planet {
      */
     int x, y, width, height;
     int diameter;
-    String planetColor;
+    Color planetColor;
     int avgDistFromSun;
     int orbitalPeriod;
+    Color color = planetColor;
     
-    public Planet(int diameterPixels,String color,int distance,int orbitalTime) {
+    public Planet(int diameterPixels,Color color,int distance,int orbitalTime) {
         this.diameter = diameterPixels;
         this.planetColor = color;
         this.avgDistFromSun = distance;
@@ -30,7 +31,7 @@ public class Planet {
          */
        // int avgDistFromSun = 1496 / 10;     // You can choose a different scaling than divided by 10
         //int orbitalPeriod = 365;
-        Color color = Color.BLUE;
+        Color color = planetColor;
         
         /*
          * Update position
